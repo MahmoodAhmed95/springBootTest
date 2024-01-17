@@ -1,12 +1,13 @@
 package com.example.demo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
-public class NameController {
+@Controller
+public class HomeController {
 
     @GetMapping("/")
-    public String name() {
-        return "Hello, Mahmood!";
+    public String home() {
+        return "home";
     }
 }
