@@ -1,3 +1,4 @@
 com/example/demo/DemoApplication.class
-com/example/demo/NameController.class
-com/example/demo/NameeController.class
+com/example/demo/Controller/LoginController.class
+com/example/demo/Controller/RegisterController.class
+com/example/demo/Controller/HomeController.class
