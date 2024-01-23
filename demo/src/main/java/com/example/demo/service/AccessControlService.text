@@ -1,0 +1,11 @@
+// AccessControlService.java
+package com.example.demo.service;
+
+import com.example.demo.entity.Folder;
+import com.example.demo.entity.User;
+
+public interface AccessControlService {
+    boolean hasAccess(User user, Folder folder);
+
+    // Additional methods if needed
+}

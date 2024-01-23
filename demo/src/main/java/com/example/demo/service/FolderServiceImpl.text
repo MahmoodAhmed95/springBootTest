@@ -1,0 +1,32 @@
+// FolderServiceImpl.java
+package com.example.demo.service;
+
+import com.example.demo.entity.Folder;
+import com.example.demo.entity.User;
+import com.example.demo.repository.FolderRepository;
+import com.example.demo.repository.UserRepository;
+import org.springframework.stereotype.Service;
+
+@Service
+public class FolderServiceImpl implements FolderService {
+
+    private final FolderRepository folderRepository;
+    private final UserRepository userRepository;
+
+    public FolderServiceImpl(FolderRepository folderRepository, UserRepository userRepository) {
+        this.folderRepository = folderRepository;
+        this.userRepository = userRepository;
+    }
+
+    @Override
+    public Folder createFolder(String name, String type, Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+        Folder folder = new Folder();
+        folder.setName(name);
+        folder.setType(type);
+        folder.setUser(user);
+
+        return folderRepository.save(folder);
+    }
+}

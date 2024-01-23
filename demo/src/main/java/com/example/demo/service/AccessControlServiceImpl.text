@@ -1,0 +1,17 @@
+// AccessControlServiceImpl.java
+package com.example.demo.service;
+
+import com.example.demo.entity.Folder;
+import com.example.demo.entity.User;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AccessControlServiceImpl implements AccessControlService {
+
+    @Override
+    public boolean hasAccess(User user, Folder folder) {
+        // Implement access control logic based on user and folder properties
+        // For example, check if the user owns the folder or if it's a public folder
+        return folder.getUser().equals(user) || "public".equals(folder.getType());
+    }
+}

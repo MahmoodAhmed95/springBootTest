@@ -1,0 +1,10 @@
+// FolderService.java
+package com.example.demo.service;
+
+import com.example.demo.entity.Folder;
+
+public interface FolderService {
+    Folder createFolder(String name, String type, Long userId);
+
+    // Additional methods if needed
+}

@@ -1,0 +1,24 @@
+// NoteController.java
+package com.example.demo.controller;
+
+import com.example.demo.entity.Note;
+import com.example.demo.service.NoteService;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/notes")
+public class NoteController {
+
+    private final NoteService noteService;
+
+    public NoteController(NoteService noteService) {
+        this.noteService = noteService;
+    }
+
+    @PostMapping
+    public Note createNote(@RequestParam String content, @RequestParam Long folderId) {
+        return noteService.createNote(content, folderId);
+    }
+
+    // Additional note-related endpoints
+}

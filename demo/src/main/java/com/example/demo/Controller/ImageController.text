@@ -1,0 +1,24 @@
+// ImageController.java
+package com.example.demo.controller;
+
+import com.example.demo.entity.Image;
+import com.example.demo.service.ImageService;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/images")
+public class ImageController {
+
+    private final ImageService imageService;
+
+    public ImageController(ImageService imageService) {
+        this.imageService = imageService;
+    }
+
+    @PostMapping
+    public Image uploadImage(@RequestParam String url, @RequestParam Long folderId) {
+        return imageService.uploadImage(url, folderId);
+    }
+
+    // Additional image-related endpoints
+}

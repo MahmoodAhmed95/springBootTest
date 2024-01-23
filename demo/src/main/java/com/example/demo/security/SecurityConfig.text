@@ -1,0 +1,9 @@
+import org.springframework.context.annotation.Configration;
+import org.springframework.security.config.annotation.web.configration.EnableWebSecurity;
+
+@Configration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+}

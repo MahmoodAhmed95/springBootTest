@@ -1,0 +1,10 @@
+// NoteService.java
+package com.example.demo.service;
+
+import com.example.demo.entity.Note;
+
+public interface NoteService {
+    Note createNote(String content, Long folderId);
+
+    // Additional methods if needed
+}

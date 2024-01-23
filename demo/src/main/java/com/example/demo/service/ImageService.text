@@ -1,0 +1,10 @@
+// ImageService.java
+package com.example.demo.service;
+
+import com.example.demo.entity.Image;
+
+public interface ImageService {
+    Image uploadImage(String url, Long folderId);
+
+    // Additional methods if needed
+}
